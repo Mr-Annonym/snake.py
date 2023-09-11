@@ -192,7 +192,7 @@ class game_controler:
             self.key_pressed = None
 
     def key_repeat_thread(self):
-        while True:
+        while 1:
             if self.key_pressed:
                 while not self.queue.empty():
                     try:
