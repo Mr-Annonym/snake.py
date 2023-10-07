@@ -31,7 +31,7 @@ class screen_controler:
         self.screen_y = screen_size_y
 
         if not pixel_info:
-            self.pixel_value_options = {'on' : '#', False : ' '}
+            self.pixel_value_options = {'on' : '##', False : '  '}
         else:
             self.pixel_value_options = pixel_info
 
@@ -77,7 +77,7 @@ class screen_controler:
             self.one_screen = ''
 
         if self.boundry:
-            one_boundry = 'X' + ''.join('-' for x in range(self.screen_x + ((self.screen_x-1)*self.pixel_spacing))) + 'X'
+            one_boundry = 'XX' + ''.join('--' for x in range(self.screen_x + ((self.screen_x-1)*self.pixel_spacing))) + 'XX'
             self.one_screen += f'{one_boundry}\n'
 
         for line in self.screen_info_matrix:
@@ -95,7 +95,7 @@ class screen_controler:
                 row += one_character + ''.join(' ' for x in range(self.pixel_spacing))
 
             if self.boundry:
-                row = f'|{row}|'
+                row = f'||{row}||'
 
             self.one_screen += f'{row}\n'
 

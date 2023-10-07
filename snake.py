@@ -11,10 +11,10 @@ class game:
     USER_LOSER = 'loser'
 
     pixel_info = {
-                False : ' ',
-                'snake_head' : '■',
-                'snake_body' : '⛝',
-                'apple' : '©'
+                False : '  ',
+                'snake_head' : '■■',
+                'snake_body' : '⛝⛝',
+                'apple' : '©©'
                 }
     
     SNAKE_UP = 1
@@ -218,7 +218,7 @@ class game_controler:
                     break
 
             if direction is self.snake_game.SNAKE_RIGHT or direction is self.snake_game.SNAKE_LEFT:
-                amount_to_move = 3
+                amount_to_move = 1
             else:
                 amount_to_move = 1
 
@@ -232,9 +232,9 @@ class game_controler:
                     print('you won :D')
                     input()
                 if amount_to_move == 1:
-                    time.sleep(0.2)
+                    time.sleep(0.1)
                 else:
-                    time.sleep(0.2/amount_to_move)
+                    time.sleep(0.1/amount_to_move)
             
             self.queue.put(direction)
 
